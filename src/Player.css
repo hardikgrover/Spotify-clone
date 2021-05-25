@@ -3,6 +3,8 @@
   flex-direction: column; */
   /* height: 100vh; */
   /* background-color: black; */
+  display: flex;
+  flex-direction: column;
 
   width: 100vw;
 }
@@ -11,4 +13,5 @@
   /* flex: 1; */
   /* flex: 0.85; */
   height: 100vh;
+  flex-grow: 1;
 }
