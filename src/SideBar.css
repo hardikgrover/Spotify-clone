@@ -7,10 +7,23 @@
   height: 100vh;
   padding-left: 10px;
   padding-right: 10px;
+  border: 1px solid white;
 }
 .sidebar_logo {
   padding: 10px;
   height: 70px;
   margin-right: auto;
   object-fit: contain;
+  border: 1px solid red;
+}
+
+.sidebar_title {
+  padding: 5px;
+  margin-left: 10px;
+  font-size: 12px;
+}
+.sidebar > hr {
+  border: 1px solid #282828;
+  width: 90%;
+  margin: 10px auto;
 }

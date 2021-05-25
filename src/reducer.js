@@ -4,23 +4,33 @@ export const initialState = {
   plaing: false,
   item: null,
   token:
-    "BQCPEj-Op9KU0qSndNZBU8lDVwS3z8OTRspZw9kydshYCqwNXREp3jPT1mMYR7zqYgnRDV-N0glIaP7RX6-IZTYqAB7KUlU3HC0Mzd13X9AwoHmymxeCeyPdjqO5E52C_HXI8VSp3Cj1DfxALCVHiPkjK2SXzxgO8RKct0zbrxAJCxTK",
+    "BQBztba4pCuISt4iekUimMJKOQG_VZTTA8RxNMvXUofnwNOD4PyRDP6xClW0q4TANLQ5dS7Y1BLylD2OgnJDIwsDFQBiS9mjlCpa7TDHadgxTo8wTqZ-uxxTjQuCLygzFbpBjDHAG9qhfE1oQ9gFsm9siKkjwuSWqKJaaOcZ5nKrTvt8",
 };
 
 const reducer = (state, action) => {
-  console.log(action);
+  // console.log(action);
 
   switch (action.type) {
     case "SET_USER":
+      console.log(action);
       return {
         ...state,
         user: action.user,
       };
     case "SET_TOKEN":
+      console.log(action);
       return {
         ...state,
         token: action.token,
       };
+
+    case "SET_PLAYLISTS":
+      console.log(action);
+      return {
+        ...state,
+        playlists: action.playlists,
+      };
+
     default:
       return state;
   }

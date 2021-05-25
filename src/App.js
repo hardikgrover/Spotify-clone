@@ -11,14 +11,16 @@ const spotify = new SpotifyWebApi();
 function App() {
   // const [token, setToken] = useState(null);
 
-  const [{ user, token }, dispatch] = useDataLayerValue();
+  const [{ user, token, playlists }, dispatch] = useDataLayerValue();
 
   useEffect(() => {
     const hash = getTokenFromUrl();
     window.location.hash = "";
     const _token = hash.access_token;
+    // console.log(_token);
 
     if (_token) {
+      // console.log("got token");
       dispatch({
         type: "SET_TOKEN",
         token: _token,
@@ -33,9 +35,25 @@ function App() {
           user: user,
         });
       });
+      spotify.getUserPlaylists().then((playlists) => {
+        console.log(playlists);
+        dispatch({
+          type: "SET_PLAYLISTS",
+          playlists: playlists.items,
+        });
+      });
+      // spotify.getUserPlaylists().then((playlists) => {
+      //   dispatch({
+      //     action: "SET_PLAYLISTS",
+      //     playlists: playlists,
+      //   });
+      // });
+      // console.log("playlists", playlists);
     }
     // console.log("i have a token >>>>", _token);
-  }, []);
+  }, [token, dispatch, user]);
+  // console.log(user);
+  // console.log(playlists);
 
   return (
     <div className="app">
