@@ -1,0 +1,10 @@
+.footer {
+  /* flex: 0.15; */
+  color: white;
+  position: fixed;
+  bottom: 0;
+  height: 65px;
+  width: 100%;
+  background-color: #28282828;
+  padding: 20px;
+}

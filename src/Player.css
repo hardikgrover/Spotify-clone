@@ -1,0 +1,14 @@
+.player {
+  /* display: flex;
+  flex-direction: column; */
+  /* height: 100vh; */
+  /* background-color: black; */
+
+  width: 100vw;
+}
+.player_body {
+  display: flex;
+  /* flex: 1; */
+  /* flex: 0.85; */
+  height: 100vh;
+}

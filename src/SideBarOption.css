@@ -1,0 +1,6 @@
+.sidebarOption {
+  color: gray;
+  height: 40px;
+  border: 1px solid red;
+  transition: 200ms color ease-in;
+}
