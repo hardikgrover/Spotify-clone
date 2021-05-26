@@ -17,6 +17,8 @@ function App() {
     const hash = getTokenFromUrl();
     window.location.hash = "";
     const _token = hash.access_token;
+    // "BQBNAvxGnLnlpnyLtqVQhlk1eYS5lcb8CofpsGXhsPdhqM_LALY2_J2Nfs_ePHhYtO2lnLVuvVidN2ECkn8TpLpeB03Ei5L_ShEfchJOIiFTZAp1nonxBuI8hkdKeEyCjYn8gmzEb9dhcI4Qf_xkPm7BrPyyS3lKpTjx9tsDgoZ7wyeQ";
+    // console.log(_token);
     // console.log(_token);
 
     if (_token) {
@@ -42,6 +44,12 @@ function App() {
           playlists: playlists.items,
         });
       });
+      spotify.getPlaylist("37i9dQZEVXcIwavjnALsxM").then((response) => {
+        dispatch({
+          type: "SET_DISCOVER_WEEKLY",
+          discover_weekly: response,
+        });
+      });
       // spotify.getUserPlaylists().then((playlists) => {
       //   dispatch({
       //     action: "SET_PLAYLISTS",
@@ -57,7 +65,8 @@ function App() {
 
   return (
     <div className="app">
-      {token ? <Player spotify={spotify} /> : <Login />}
+      {!token && <Login />}
+      {token && <Player spotify={spotify} />}
     </div>
   );
 }

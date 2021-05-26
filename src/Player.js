@@ -13,9 +13,8 @@ function Player({ spotify }) {
 
         <Body spotify={spotify} />
       </div>
-      <div className="footer">
-        <Footer />
-      </div>
+
+      <Footer />
     </div>
   );
 }

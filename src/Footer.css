@@ -3,10 +3,10 @@
   color: white;
   position: fixed;
   bottom: 0;
-  height: 65px;
+  height: 50px;
   width: 97%;
-  background-color: #28282828;
-  padding: 20px;
+  background-color: #282828;
+  padding: 10px;
 
   display: flex;
   justify-content: space-between;
